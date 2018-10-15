@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17-beta.0/vue.common.js"></script>
+</head>
+<body>
+    <div id="box">
+        <input type="range" v-model="r" min="0" max="255">
+        <input type="range" v-model="g" min="0" max="255">
+        <input type="range" v-model="b" min="0" max="255"><br>
+        <input type="text" v-model="width">
+        <input type="text" v-model="height"><br>
+        <div v-bind:style="{'width': width+'px','height':height+'px','background':'rgb(' + r + ','+ g + ','+ b+')'}"></div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#box",
+            data: {
+                width: 100,
+                height: 100,
+                r: 0,
+                g: 0,
+                b: 0,
+                text: ""
+            }
+            // template: "<p>{{msg}}</p>"
+        })
+        console.log(vm)
+    </script>
+</body>
+</html>
